@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
-<head>
-    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
-    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
-    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
+  <meta charset="utf-8">
+  <!-- utf-8 works for most cases -->
+  <meta name="viewport" content="width=device-width">
+  <!-- Forcing initial-scale shouldn't be necessary -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Use the latest (edge) version of IE rendering engine -->
+  <meta name="x-apple-disable-message-reformatting">
+  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+  <title></title>
+  <!-- The title tag shows in email notifications, like Android 4.4. -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 
-    <!-- Web Font / @font-face : BEGIN -->
-    <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+  <!-- Web Font / @font-face : BEGIN -->
+  <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
 
-    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
-    <!--[if mso]>
+  <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+  <!--[if mso]>
         <style>
             * {
                 font-family: sans-serif !important;
@@ -20,113 +24,132 @@
         </style>
     <![endif]-->
 
-    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
-    <!--[if !mso]><!-->
-    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
-    <!--<![endif]-->
+  <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+  <!--[if !mso]><!-->
+  <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+  <!--<![endif]-->
 
-    <!-- Web Font / @font-face : END -->
+  <!-- Web Font / @font-face : END -->
 
-    <!-- CSS Reset : BEGIN -->
-    <style>
+  <!-- CSS Reset : BEGIN -->
+  <style>
+    /* What it does: Remove spaces around the email design added by some email clients. */
 
-        /* What it does: Remove spaces around the email design added by some email clients. */
-        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
-        html,
-        body {
-            margin: 0 auto !important;
-            padding: 0 !important;
-            height: 100% !important;
-            width: 100% !important;
-        }
+    /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
 
-        /* What it does: Stops email clients resizing small text. */
-        * {
-            -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
-        }
+    html,
+    body {
+      margin: 0 auto !important;
+      padding: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+    }
 
-        /* What it does: Centers email on Android 4.4 */
-        div[style*="margin: 16px 0"] {
-            margin: 0 !important;
-        }
+    /* What it does: Stops email clients resizing small text. */
 
-        /* What it does: Stops Outlook from adding extra spacing to tables. */
-        table,
-        td {
-            mso-table-lspace: 0pt !important;
-            mso-table-rspace: 0pt !important;
-        }
+    * {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
 
-        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
-        table {
-            border-spacing: 0 !important;
-            border-collapse: collapse !important;
-            table-layout: fixed !important;
-            margin: 0 auto !important;
-        }
-        table table table {
-            table-layout: auto;
-        }
+    /* What it does: Centers email on Android 4.4 */
 
-        /* What it does: Uses a better rendering method when resizing images in IE. */
-        img {
-            -ms-interpolation-mode:bicubic;
-        }
+    div[style*="margin: 16px 0"] {
+      margin: 0 !important;
+    }
 
-        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
-        a {
-            text-decoration: none;
-        }
+    /* What it does: Stops Outlook from adding extra spacing to tables. */
 
-        /* What it does: A work-around for email clients meddling in triggered links. */
-        *[x-apple-data-detectors],  /* iOS */
-        .unstyle-auto-detected-links *,
-        .aBn {
-            border-bottom: 0 !important;
-            cursor: default !important;
-            color: inherit !important;
-            text-decoration: none !important;
-            font-size: inherit !important;
-            font-family: inherit !important;
-            font-weight: inherit !important;
-            line-height: inherit !important;
-        }
+    table,
+    td {
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
+    }
 
-        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
-        .a6S {
-            display: none !important;
-            opacity: 0.01 !important;
-        }
-        /* If the above doesn't work, add a .g-img class to any image in question. */
-        img.g-img + div {
-            display: none !important;
-        }
+    /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
 
-        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
-        /* Create one of these media queries for each additional viewport size you'd like to fix */
+    table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+      table-layout: fixed !important;
+      margin: 0 auto !important;
+    }
 
-        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
-        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
-            .email-container {
-                min-width: 320px !important;
-            }
-        }
-        /* iPhone 6, 6S, 7, 8, and X */
-        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
-            .email-container {
-                min-width: 375px !important;
-            }
-        }
-        /* iPhone 6+, 7+, and 8+ */
-        @media only screen and (min-device-width: 414px) {
-            .email-container {
-                min-width: 414px !important;
-            }
-        }
+    table table table {
+      table-layout: auto;
+    }
 
-    </style>
-    <!-- CSS Reset : END -->
+    /* What it does: Uses a better rendering method when resizing images in IE. */
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+
+    a {
+      text-decoration: none;
+    }
+
+    /* What it does: A work-around for email clients meddling in triggered links. */
+
+    *[x-apple-data-detectors],
+    /* iOS */
+
+    .unstyle-auto-detected-links *,
+    .aBn {
+      border-bottom: 0 !important;
+      cursor: default !important;
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+
+    .a6S {
+      display: none !important;
+      opacity: 0.01 !important;
+    }
+
+    /* If the above doesn't work, add a .g-img class to any image in question. */
+
+    img.g-img+div {
+      display: none !important;
+    }
+
+    /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+
+    /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+    /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+      .email-container {
+        min-width: 320px !important;
+      }
+    }
+
+    /* iPhone 6, 6S, 7, 8, and X */
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+      .email-container {
+        min-width: 375px !important;
+      }
+    }
+
+    /* iPhone 6+, 7+, and 8+ */
+
+    @media only screen and (min-device-width: 414px) {
+      .email-container {
+        min-width: 414px !important;
+      }
+    }
+  </style>
+  <!-- CSS Reset : END -->
   <!-- Reset list spacing because Outlook ignores much of our inline CSS. -->
   <!--[if mso]>
   <style type="text/css">
@@ -146,68 +169,88 @@
   </style>
   <![endif]-->
 
-    <!-- Progressive Enhancements : BEGIN -->
-    <style>
+  <!-- Progressive Enhancements : BEGIN -->
+  <style>
+    /* What it does: Hover styles for buttons */
 
-      /* What it does: Hover styles for buttons */
-      .button-td,
-      .button-a {
-          transition: all 100ms ease-in;
+    .button-td,
+    .button-a {
+      transition: all 100ms ease-in;
+    }
+
+    .button-td-primary:hover,
+    .button-a-primary:hover {
+      background: #555555 !important;
+      border-color: #555555 !important;
+    }
+
+
+
+    /* Media Queries */
+
+    @media screen and (max-width: 575px) {
+      .banner-logo-wrapper {
+        max-width: 100% !important;
+        min-width: 100% !important;
+        text-align: center !important;
       }
-      .button-td-primary:hover,
-      .button-a-primary:hover {
-          background: #555555 !important;
-          border-color: #555555 !important;
-      }
+    }
 
-      /* Media Queries */
-      @media screen and (max-width: 480px) {
+    @media screen and (max-width: 480px) {
 
-          /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
-          .fluid {
-              width: 100% !important;
-              max-width: 100% !important;
-              height: auto !important;
-              margin-left: auto !important;
-              margin-right: auto !important;
-          }
-
-          /* What it does: Forces table cells into full-width rows. */
-          .stack-column,
-          .stack-column-center {
-              display: block !important;
-              width: 100% !important;
-              max-width: 100% !important;
-              direction: ltr !important;
-          }
-          /* And center justify these ones. */
-          .stack-column-center {
-              text-align: center !important;
-          }
-
-          /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
-          .center-on-narrow {
-              text-align: center !important;
-              display: block !important;
-              margin-left: auto !important;
-              margin-right: auto !important;
-              float: none !important;
-          }
-          table.center-on-narrow {
-              display: inline-block !important;
-          }
-
-          /* What it does: Adjust typography on small screens to improve readability */
-          .email-container p {
-              font-size: 17px !important;
-          }
+      /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+      .fluid {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
       }
 
-    </style>
-    <!-- Progressive Enhancements : END -->
+      /* What it does: Forces table cells into full-width rows. */
+      .stack-column,
+      .stack-column-center {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        direction: ltr !important;
+      }
+      /* And center justify these ones. */
+      .stack-column-center {
+        text-align: center !important;
+      }
 
-    <!-- What it does: Makes background images in  Outlook render at correct size. -->
-    <!--[if gte mso 9]>
+      /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+      .center-on-narrow {
+        text-align: center !important;
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        float: none !important;
+        max-width: auto !important;
+      }
+      table.center-on-narrow {
+        display: inline-block !important;
+      }
+
+      /* What it does: Adjust typography on small screens to improve readability */
+      .email-container p {
+        font-size: 12px !important;
+        text-align: center;
+      }
+      .h-one-titles {
+        font-size: 18px !important;
+        text-align: center !important;
+      }
+      p.text-block-p-resp {
+        height: 100px !important;
+      }
+    }
+  </style>
+  <!-- Progressive Enhancements : END -->
+
+  <!-- What it does: Makes background images in  Outlook render at correct size. -->
+  <!--[if gte mso 9]>
     <xml>
         <o:OfficeDocumentSettings>
             <o:AllowPNG/>
@@ -223,325 +266,319 @@
   2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
   3. mso conditional: For Windows 10 Mail
 -->
+
 <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly;">
   <center style="width: 100%;">
-    <!--[if mso | IE]>
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;">
-    <tr>
-    <td>
-    <![endif]-->
 
-        <!-- Visually Hidden Preheader Text : BEGIN -->
-        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-            (Optional) This text will appear in the inbox preview, but not the email body. It can be used to supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490 characters) seems like a better UX for anyone using a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not included, email clients will automatically populate it using the text (including image alt text) at the start of the email's body.
-        </div>
-        <!-- Visually Hidden Preheader Text : END -->
+    <!-- Visually Hidden Preheader Text : BEGIN -->
+    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+      National Park
+    </div>
 
-        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
-        <!-- Preview Text Spacing Hack : BEGIN -->
-        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-          &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-        </div>
-        <!-- Preview Text Spacing Hack : END -->
 
-        <!--
+    <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+    <!-- Preview Text Spacing Hack : BEGIN -->
+    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+      &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <!-- Preview Text Spacing Hack : END -->
+
+    <!--
             Set the email width. Defined in two places:
             1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
             2. MSO tags for Desktop Windows Outlook enforce a 680px width.
             Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
         -->
-        <div style="max-width: 680px; margin: 0 auto;" class="email-container">
-            <!--[if mso]>
+    <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+      <!--[if mso]>
             <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
             <tr>
             <td>
             <![endif]-->
 
-          <!-- Email Body : BEGIN -->
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0 auto;">
-            <!-- Email Header : BEGIN -->
+      <!-- Email Body : BEGIN -->
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0 auto;">
+        <!-- Email Header : BEGIN -->
 
-
-
-
-<!-- Thumbnail Left, Text Right : BEGIN -->
-<tr>
-    <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
-    <td dir="ltr" height="266" valign="middle" width="100%" style="padding: 10px 0; background: url('https://i.imgur.com/XACuqYR.jpg');background-position:center;background-size:cover;background-repeat:no-repeat;">
-        <!--[if mso]>
+        <!-- Thumbnail Left, Text Right : BEGIN -->
+        <tbody><tr>
+          <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+          <td dir="ltr" height="266" valign="middle" width="100%" style="padding: 10px 0; background: url('https://i.imgur.com/XACuqYR.jpg');background-position:center;background-size:cover;background-repeat:no-repeat;">
+            <!--[if mso]>
         <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
         <tr>
         <td valign="top" width="660" style="width: 660px;">
         <![endif]-->
-        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:660px;">
-            <tr>
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:660px;">
+              <tbody><tr>
                 <td align="center" valign="top" style="font-size:0; padding: 10px 0;">
-                    <!--[if mso]>
+                  <!--[if mso]>
                     <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
                     <tr>
                     <td valign="top" width="220" style="width: 220px;">
                     <![endif]-->
-                    <div style="display:inline-block; margin: 0 -2px; max-width: 200px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tr>
-                                <td dir="ltr" style="padding: 0 10px 10px 10px;">
-                                    <img src="https://i.imgur.com/CpE3WFL.png" width="260" height="157" border="0" alt="alt_text" class="center-on-narrow" style="width: 270px; max-width: 270px; height: auto; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <!--[if mso]>
+                  <div class="banner-logo-wrapper" style="display:inline-block; margin: 0 -2px; max-width: 200px; min-width:160px; vertical-align:top; width:100%;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tbody><tr>
+                        <td dir="ltr" style="padding: 0 10px 10px 10px;">
+                          <img src="https://i.imgur.com/CpE3WFL.png" width="260" height="157" border="0" alt="alt_text" class="center-on-narrow" style="width: 270px; max-width: 270px; height: auto; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                        </td>
+                      </tr>
+                    </tbody></table>
+                  </div>
+                  <!--[if mso]>
                     </td>
                     <td valign="top" width="440" style="width: 440px;">
                     <![endif]-->
-                    <div style="display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" class="stack-column">
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tr>
+                  <div style="display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tbody><tr>
 
-                            </tr>
-                        </table>
-                    </div>
-                    <!--[if mso]>
+                      </tr>
+                    </tbody></table>
+                  </div>
+                  <!--[if mso]>
                     </td>
                     </tr>
                     </table>
                     <![endif]-->
                 </td>
-            </tr>
-        </table>
-        <!--[if mso]>
+              </tr>
+            </tbody></table>
+            <!--[if mso]>
         </td>
         </tr>
         </table>
         <![endif]-->
-    </td>
-</tr>
-<!-- Thumbnail Left, Text Right : END -->
+          </td>
+        </tr>
+        <!-- Thumbnail Left, Text Right : END -->
 
+        <!-- Barrior -->
+        <tr style="background:#9abce3;">
+          <td>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td style="padding: 20px 20px 0 20px; font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px; line-height: 20px; color: #555555;">
 
+                    <h1 class="h-one-titles" style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #ffffff; font-weight: normal;">July Feature Story</h1>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <img src="https://i.imgur.com/nxUFwS0.jpg">
+          </td>
+        </tr>
 
-<!-- Barrior -->
-<tr style="background:#9abce3;">
-  <td>
-      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-          <tbody>
-            <tr>
-              <td style="padding: 20px 20px 0 20px; font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px; line-height: 20px; color: #555555;">
-
-                  <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #ffffff; font-weight: normal;">July Feature Story</h1>
-              </td>
-          </tr>
-      </tbody>
-    </table>
-    <img src="https://i.imgur.com/nxUFwS0.jpg"/>
-  </td>
-</tr>
-
-
-
-
-
-<!-- Start of the two column : START -->
-<td height="100%" valign="top" width="100%" style="background-color: #ebf2f9;">
-  <!--[if mso]>
+        <!-- Start of the two column : START -->
+        <tr><td height="100%" valign="top" width="100%" style="background-color: #ebf2f9;">
+          <!--[if mso]>
   <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
   <tr>
   <td valign="top" width="660">
   <![endif]-->
-  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
-      <tbody><tr>
-          <td align="center" valign="top" style="font-size:0; padding: 30px 0;">
-              <!--[if mso]>
+          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+            <tbody>
+              <tr>
+                <td align="center" valign="top" style="font-size:0; padding: 30px 0;">
+                  <!--[if mso]>
               <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
               <tr>
               <td valign="top" width="330">
               <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tbody><tr>
+                  <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tbody>
+                        <tr>
                           <td style="padding: 10px 10px;">
-                              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
-                                  <tbody>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px; line-height: 20px; color: #231f20; padding-top: 10px;" class="stack-column-center">
-                                          <p style="margin: 0;">
-                                            Summer is officially here! In the Scenic Wild Delaware River (SWDR) region, summertime is synonymous with peak travel season. It is time to hit the road and explore the great things the Scenic Wild Delaware River program has to offer. The SWDR region has something that people of all ages and interests can enjoy.
-                                            <div style="height:20px;"></div>
-                                            There are many opportunities to try your hand at something new in the SWDR region. Our partners offer unique experiences from as fly-fishing lessons to zip lining tours. Many towns along the SWDR have historic museums, theaters, and points of interests to tour. With an abundance of places to stay, from campgrounds on the banks of the river to beautiful B&Bs with many amenities, start planning your trip now!
-                                            <div style="height:20px;"></div>
-                                            Please visit our website <a href="https://delawareriver.natgeotourism.com" rel="nofollow noreferrer noopener">https://delawareriver.natgeotourism.com</a> to read more on where to stay, places to go, and fun things to do. Continue to check our website for special events, such as music festivals, farmers markets, and exhibits occurring throughout the summer.
-                                        </p>
-                                      </td>
-                                  </tr>
-                              </tbody></table>
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                              <tbody>
+                                <tr>
+                                  <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px; line-height: 20px; color: #231f20; padding-top: 10px;" class="stack-column-center">
+                                    <p style="margin: 0;">
+                                      Summer is officially here! In the Scenic Wild Delaware River (SWDR) region, summertime is synonymous with peak travel season. It is time to hit the road and explore the great things the Scenic Wild Delaware River program has to offer. The SWDR region
+                                      has something that people of all ages and interests can enjoy.
+                                      </p><div style="height:20px;"></div>
+                                      There are many opportunities to try your hand at something new in the SWDR region. Our partners offer unique experiences from as fly-fishing lessons to zip lining tours. Many towns along the SWDR have historic museums, theaters, and points of interests
+                                      to tour. With an abundance of places to stay, from campgrounds on the banks of the river to beautiful B&amp;Bs with many amenities, start planning your trip now!
+                                      <div style="height:20px;"></div>
+                                      Please visit our website <a href="https://delawareriver.natgeotourism.com" rel="nofollow noreferrer noopener">https://delawareriver.natgeotourism.com</a> to read more on where to stay, places to go, and fun things
+                                      to do. Continue to check our website for special events, such as music festivals, farmers markets, and exhibits occurring throughout the summer.
+                                    <p></p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </td>
-                      </tr>
-                  </tbody></table>
-              </div>
-              <!--[if mso]>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso]>
               </td>
               <td valign="top" width="330">
               <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tbody><tr>
+                  <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tbody>
+                        <tr>
                           <td style="padding: 10px 10px;">
-                              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
-                                  <tbody>
-                                  <tr>
-                                    <td><figure style="background: #fff;text-align: center;font-size: 11px;margin: 0 0 20px 0;">
-                                        <img src="https://i.imgur.com/BQ3BSfj.jpg" border="0" alt="Zip lining at Kittatinny Adventure Center in Milford, PA." class="center-on-narrow" style="width:100%; max-width: 100%; height: 100%; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                        <figcaption>Zip lining at Kittatinny Adventure Center in Milford, PA.</figcaption>
-                                      </figure>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      <figure style="background: #fff;text-align: center;font-size: 11px;margin: 0 0 10px 0;">
-                                        <img src="https://i.imgur.com/rd0znuz.jpg" border="0" alt="ECCE Bed & Breakfast in Barryville, NY." class="center-on-narrow" style="width: 100%; max-width: 100%; height: 100%; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                        <figcaption>ECCE Bed & Breakfast in Barryville, NY.</figcaption>
-                                      </figure>
-                                    </td>
-                                  </tr>
-                              </tbody></table>
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <figure style="background: #fff;text-align: center;font-size: 11px;margin: 0 0 20px 0;">
+                                      <img src="https://i.imgur.com/BQ3BSfj.jpg" border="0" alt="Zip lining at Kittatinny Adventure Center in Milford, PA." class="center-on-narrow" style="width:100%; max-width: 100%; height: 100%; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                      <figcaption>Zip lining at Kittatinny Adventure Center in Milford, PA.</figcaption>
+                                    </figure>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <figure style="background: #fff;text-align: center;font-size: 11px;margin: 0 0 10px 0;">
+                                      <img src="https://i.imgur.com/rd0znuz.jpg" border="0" alt="ECCE Bed &amp; Breakfast in Barryville, NY." class="center-on-narrow" style="width: 100%; max-width: 100%; height: 100%; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                      <figcaption>ECCE Bed &amp; Breakfast in Barryville, NY.</figcaption>
+                                    </figure>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </td>
-                      </tr>
-                  </tbody></table>
-              </div>
-              <!--[if mso]>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso]>
               </td>
               </tr>
               </table>
               <![endif]-->
-          </td>
-      </tr>
-  </tbody></table>
-  <!--[if mso]>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!--[if mso]>
   </td>
   </tr>
   </table>
   <![endif]-->
-</td>
+        </td>
 
+        <!-- Barrior -->
+        </tr><tr style="background:#dbae64;">
+          <td>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td style="padding: 20px 20px 0 20px; font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px; line-height: 20px; color: #555555;">
 
+                    <h1 class="h-one-titles" style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #ffffff; font-weight: normal;">Around the SWDR Region - In The News</h1>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <img src="https://i.imgur.com/EO1jhVq.jpg">
+          </td>
+        </tr>
 
-
-
-
-
-
-
-
-<!-- Barrior -->
-<tr style="background:#dbae64;">
-  <td>
-      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-          <tbody>
-            <tr>
-              <td style="padding: 20px 20px 0 20px; font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px; line-height: 20px; color: #555555;">
-
-                  <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #ffffff; font-weight: normal;">Around the SWDR Region - In The News</h1>
-              </td>
-          </tr>
-      </tbody>
-    </table>
-    <img src="https://i.imgur.com/EO1jhVq.jpg"/>
-  </td>
-</tr>
-
-
-
-
-
-<!-- Description destion - two col / image and text -->
-<td dir="ltr" height="100%" valign="top" width="100%" style="padding: 10px 0; background-color: #f6ebd8;">
-  <!--[if mso]>
+        <!-- Description destion - two col / image and text -->
+        <tr><td dir="ltr" height="100%" valign="top" width="100%" style="padding: 10px 0; background-color: #f6ebd8;">
+          <!--[if mso]>
   <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
   <tr>
   <td valign="top" width="660" style="width: 660px;">
   <![endif]-->
-  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:660px;">
-      <tbody>
-        <tr>
-          <td align="center" valign="top" style="font-size:0; padding: 30px 0;">
-              <!--[if mso]>
+          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:660px;">
+            <tbody>
+              <tr>
+                <td align="center" valign="top" style="font-size:0; padding: 30px 0;">
+                  <!--[if mso]>
               <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
               <tr>
               <td valign="top" width="220" style="width: 220px;">
               <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; max-width: 100px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tbody><tr>
+                  <div style="display:inline-block; margin: 0 -2px; max-width: 100px; min-width:160px; vertical-align:top; width:100%;height:190px;" class="stack-column">
+                    <table role="presentation" verticle-align="middle" height="190px" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tbody>
+                        <tr>
                           <td dir="ltr" style="padding: 0 10px 10px 10px;">
-                              <img src="https://i.imgur.com/KyUokRp.jpg" width="160" height="160" border="0" alt="alt_text" class="center-on-narrow" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                            <img src="https://i.imgur.com/KyUokRp.jpg" width="160" height="160" border="0" alt="alt_text" class="center-on-narrow" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
                           </td>
-                      </tr>
-                  </tbody></table>
-              </div>
-              <!--[if mso]>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso]>
               </td>
               <td valign="top" width="440" style="width: 440px;">
               <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; max-width:60%; min-width:320px; vertical-align:top;" class="stack-column">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <div style="display:inline-block; margin: 0 -2px; max-width:60%; min-width:320px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                       <tbody>
                         <tr>
                           <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 11px; line-height: 20px; color: #231f20; padding: 0px 20px 0; text-align: left;" class="center-on-narrow" valign="middle">
-                              <p style="
-                              margin: 0 0 10px 0; 
+                            <p style="
+                              margin: 0px 20px 10px 20px; 
                               height:140px;
                               margin: 0px;
                               display: table-cell;
                               vertical-align: middle;
-                              ">The National Parks Conservation Association and the Scenic Wild Delaware River program were co-sponsors of the recent Upper Delaware River Bio Blitz event. For the second time in five years, the Bio Blitz was held on the Gales Property in Starlight, Wayne County, PA. At this two-day event, biologists and volunteers united to collect, identify, and record various species that were found onsite including aquatic macroinvertebrates, fungi, mammals, and more. There were also activities and workshops for people of all ages to inform attendees of all that can be found in the area.</p>
+                              " class="text-block-p-resp">The National Parks Conservation Association and the Scenic Wild Delaware River program were co-sponsors of the recent Upper Delaware River Bio Blitz event. For the second time in five years, the Bio Blitz was held on the Gales
+                              Property in Starlight, Wayne County, PA. At this two-day event, biologists and volunteers united to collect, identify, and record various species that were found onsite including aquatic macroinvertebrates, fungi, mammals,
+                              and more. There were also activities and workshops for people of all ages to inform attendees of all that can be found in the area.</p>
                           </td>
-                      </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!--[if mso]>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso]>
               </td>
               </tr>
               </table>
               <![endif]-->
 
-<div style="height: 5px;"></div>
-<div style="
+                  <div style="height: 5px;"></div>
+                  <div style="
     padding-left: 63px;
     padding-right: 63px;
     height: 17px;">
-<hr style="height:2px;border:none;background: #dcae64;"/>
-</div>
+                    <hr style="height:2px;border:none;background: #dcae64;">
+                  </div>
 
-              <!--[if mso]>
+                  <!--[if mso]>
               <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
               <tr>
               <td valign="top" width="220" style="width: 220px;">
               <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; max-width: 100px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tbody><tr>
+                  <div style="display:inline-block; margin: 0 -2px; max-width: 100px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tbody>
+                        <tr>
                           <td dir="ltr" style="padding: 0 10px 10px 10px;">
-                              <img src="https://i.imgur.com/TCjyVlT.jpg" width="160" height="160" border="0" alt="alt_text" class="center-on-narrow" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                            <img src="https://i.imgur.com/TCjyVlT.jpg" width="160" height="160" border="0" alt="alt_text" class="center-on-narrow" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
                           </td>
-                      </tr>
-                  </tbody></table>
-              </div>
-              <!--[if mso]>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso]>
               </td>
               <td valign="top" width="440" style="width: 440px;">
               <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; max-width:60%; min-width:320px; vertical-align:top;" class="stack-column">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tbody><tr>
+                  <div style="display:inline-block; margin: 0 -2px; max-width:60%; min-width:320px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tbody>
+                        <tr>
                           <td dir="ltr" style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 11px; line-height: 20px; color: #231f20; padding: 0px 20px 0; text-align: left;" class="center-on-narrow">
-                              <p style="
+                            <p style="
                               margin: 0 0 10px 0; 
                               height:140px;
                               margin: 0px;
                               display: table-cell;
                               vertical-align: middle;
-                              ">SWDR had a table at the ribbon cutting for the Lower Mount Bethel Township Tekening Trail System and Nature Center on June 20. This event was held in conjunction with day 9 of the Delaware River Sojourn. We greeted the 100+ sojourners as they came off the river. Click here <a href="http://www.bluevalleytimes.com/paper.html" rel="noreferrer noopener nofollow" style="color: #231f20;">http://www.bluevalleytimes.com/paper.html to view local media coverage of the event.</p>
+                              " class="text-block-p-resp">SWDR had a table at the ribbon cutting for the Lower Mount Bethel Township Tekening Trail System and Nature Center on June 20. This event was held in conjunction with day 9 of the Delaware River Sojourn. We greeted the 100+
+                              sojourners as they came off the river. Click here <a href="http://www.bluevalleytimes.com/paper.html" rel="noreferrer noopener nofollow" style="color: #231f20;">http://www.bluevalleytimes.com/paper.html to view local media coverage of the event.</a></p>
                           </td>
                       </tr>
                   </tbody>
@@ -558,7 +595,7 @@
     padding-left: 63px;
     padding-right: 63px;
     height: 17px;">
-<hr style="height:2px;border:none;background: #dcae64;"/>
+<hr style="height:2px;border:none;background: #dcae64;">
 </div>
 
 
@@ -576,7 +613,8 @@
                               <img src="https://i.imgur.com/lPqh0xn.jpg" width="160" height="160" border="0" alt="alt_text" class="center-on-narrow" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
                           </td>
                       </tr>
-                  </tbody></table>
+                  </tbody>
+                </table>
               </div>
               <!--[if mso]>
               </td>
@@ -591,493 +629,443 @@
                               height:140px;
                               margin: 0px;
                               display: table-cell;
-                              vertical-align: middle;">Welcome to The Big A Grillehouse, East Stroudsburg, PA, the newest contributor to the SWDR travel website. <a style="color:#231f20;" href="https://delawareriver.natgeotourism.com/content/the-big-a-grillehouse/del130ee6de96b84e15a" rel="nofollow noreferrer noopener" style="color: #231f20;">https://delawareriver.natgeotourism.com/content/the-big-a-grillehouse/del130ee6de96b84e15a</a></p>
+                              vertical-align: middle;" class="text-block-p-resp">Welcome to The Big A Grillehouse, East Stroudsburg, PA, the newest contributor to the SWDR travel website. <a style="color:#231f20;" href="https://delawareriver.natgeotourism.com/content/the-big-a-grillehouse/del130ee6de96b84e15a" rel="nofollow noreferrer noopener">https://delawareriver.natgeotourism.com/content/the-big-a-grillehouse/del130ee6de96b84e15a</a></p>
                           </td>
-                      </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!--[if mso]>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso]>
               </td>
               </tr>
               </table>
               <![endif]-->
 
-<div style="height: 5px;"></div>
-<div style="
+                  <div style="height: 5px;"></div>
+                  <div style="
     padding-left: 63px;
     padding-right: 63px;
     height: 17px;">
-<hr style="height:2px;border:none;background: #dcae64;"/>
-</div>
+                    <hr style="height:2px;border:none;background: #dcae64;">
+                  </div>
 
-
-
-
-
-              <!--[if mso]>
+                  <!--[if mso]>
               <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
               <tr>
               <td valign="top" width="220" style="width: 220px;">
               <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; max-width: 100px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tbody><tr>
+                  <div style="display:inline-block; margin: 0 -2px; max-width: 100px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tbody>
+                        <tr>
                           <td dir="ltr" style="padding: 0 10px 10px 10px;">
-                              <img src="https://i.imgur.com/AXXQuLz.png" width="160" height="160" border="0" alt="alt_text" class="center-on-narrow" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                            <img src="https://i.imgur.com/AXXQuLz.png" width="160" height="160" border="0" alt="alt_text" class="center-on-narrow" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
                           </td>
-                      </tr>
-                  </tbody></table>
-              </div>
-              <!--[if mso]>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso]>
               </td>
               <td valign="top" width="440" style="width: 440px;">
               <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; max-width:60%; min-width:320px; vertical-align:top;" class="stack-column">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tbody><tr>
+                  <div style="display:inline-block; margin: 0 -2px; max-width:60%; min-width:320px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tbody>
+                        <tr>
                           <td dir="ltr" style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 11px; line-height: 20px; color: #231f20; padding: 0px 20px 0; text-align: left;" class="center-on-narrow">
-                              <p style="
+                            <p class="text-block-p-resp" style="
                               margin: 0 0 10px 0; 
                               height:140px;
                               margin: 0px;
                               display: table-cell;
-                              vertical-align: middle;">Help promote the #ScenicWildDelawareRiver. Among recent posts using our hashtag: Apple Pie Café, The Camptons, Delaware Highlands Conservancy, Delaware Water Gap view, farm scene in Monroe County, Fifield Outfitters, Historic Blairstown Village, Narrowsburg, NY, Narrowsburg Union, Peters Valley Gallery, Sullivan Catskills, The Tusten Cup</p>
+                              vertical-align: middle;">Help promote the #ScenicWildDelawareRiver. Among recent posts using our hashtag: Apple Pie Café, The Camptons, Delaware Highlands Conservancy, Delaware Water Gap view, farm scene in Monroe County, Fifield Outfitters, Historic
+                              Blairstown Village, Narrowsburg, NY, Narrowsburg Union, Peters Valley Gallery, Sullivan Catskills, The Tusten Cup</p>
                           </td>
-                      </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!--[if mso]>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso]>
               </td>
               </tr>
               </table>
               <![endif]-->
-          </td>
+                </td>
 
-      </tr>
-  </tbody>
-</table>
-  <!--[if mso]>
-  </td>
-  </tr>
-  </table>
-  <![endif]-->
-</td>
-
-
-
-
-
-<!-- Barrior -->
-<tr style="background:#367461;">
-  <td>
-      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-          <tbody>
-            <tr>
-              <td style="padding: 20px 20px 0 20px; font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px; line-height: 20px; color: #555555;">
-
-                  <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #ffffff; font-weight: normal;">Sustainability Feature Story</h1>
-              </td>
-          </tr>
-      </tbody>
-    </table>
-    <img src="https://i.imgur.com/npSdI3m.jpg"/>
-  </td>
-</tr>
-
-
-
-
-
-
-
-
-
-<!-- Start of the two column : START -->
-<td height="100%" valign="top" width="100%" style="background-color: #d7e3df;">
-  <!--[if mso]>
-  <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
-  <tr>
-  <td valign="top" width="660">
-  <![endif]-->
-  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
-      <tbody><tr>
-          <td align="center" valign="top" style="font-size:0; padding: 30px 0 0px 0;">
-              <!--[if mso]>
-              <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
-              <tr>
-              <td valign="top" width="330">
-              <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
-
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tbody><tr>
-                          <td style="padding: 10px 10px;">
-                              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
-                                  <tbody>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px; line-height: 20px; color: #231f20; padding-top: 10px;" class="stack-column-center">
-                                          <p style="margin: 0;">
-                                            SAVE THE DATE – September 19, 2018
-                                            Scenic Wild Delaware River Workshop
-                                            Preserving – Protecting-Promoting
-                                            Our Natural, Historic and Cultural Assets
-                                            At the Historic Blairstown Theater (Roy’s Hall) 30 Main St., Blairstown, NJ 07825
-                                            <div style="height:20px;"></div>
-                                            Panelists and Presentations in the areas of: 
-                                            Green Community Initiatives (examples include: Clean Energy Community Designation, Green Infrastructure, Trail and Open Space initiatives)
-                                            Revitalization through Historic & Cultural Preservation (examples include: Establishing historic districts and arts districts, Public Art and Public Art spaces as a community marketing tool)
-                                            Sustainable Agriculture (examples include Utilizing farmers markets to promote sustainable agriculture, Farm to Table/Fork initiatives, Wineries, etc.)
-                                        </p>
-                                      </td>
-                                  </tr>
-                              </tbody></table>
-                          </td>
-                      </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!--[if mso]>
-              </td>
-              <td valign="top" width="330">
-              <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tbody><tr>
-                          <td style="padding: 10px 10px;">
-                              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
-                                  <tbody>
-                                  <tr>
-                                    <td>
-                                      <figure style="background: #fff;text-align: center;font-size: 11px;margin:0;">
-                                        <img src="https://i.imgur.com/cLH59g0.jpg" border="0" alt="alt_text" class="center-on-narrow" style="width: 100%; max-width: 400px; height: auto; background: #dddddd; font-family: sans-serif; line-height: 20px; color: #555555;">
-                                        <figcaption>Zip lining at Kittatinny Adventure Center in Milford, PA.</figcaption>
-                                      </figure>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px; line-height: 20px; color: #231f20; padding-top: 10px;" class="stack-column-center">
-                                      <p style="margin: 0;">
-                                        If you want to be a presenter or have suggestions for presenters, please contact SWDR staff, Sharon Davis, sdavis@npca.org (570.460.4468) or Tatiana Orlov, torlov@npca.org (347.633.3590)
-                                        Watch for the Eventbrite invitation in your mailbox – coming soon.
-                                        </p>
-                                      </td>
-                                  </tr>
-                              </tbody></table>
-                          </td>
-                      </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!--[if mso]>
-              </td>
               </tr>
-              </table>
-              <![endif]-->
-          </td>
-      </tr>
-  </tbody>
-</table>
-  <!--[if mso]>
+            </tbody>
+          </table>
+          <!--[if mso]>
   </td>
   </tr>
   </table>
   <![endif]-->
-  <div>Test</div>
-</td>
+        </td>
 
+        <!-- Barrior -->
+        </tr><tr style="background:#367461;">
+          <td>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td style="padding: 20px 20px 0 20px; font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px; line-height: 20px; color: #555555;">
 
+                    <h1 class="h-one-titles" style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #ffffff; font-weight: normal;">Sustainability Feature Story</h1>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <img src="https://i.imgur.com/npSdI3m.jpg">
+          </td>
+        </tr>
 
-
-
-
-
-
-<!-- Barrior -->
-<tr style="background:#9abce3;">
-  <td>
-      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-          <tbody>
-            <tr>
-              <td style="padding: 20px 20px 0 20px; font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px; line-height: 20px; color: #555555;">
-
-                  <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #ffffff; font-weight: normal;">Upcoming Events</h1>
-              </td>
-          </tr>
-      </tbody>
-    </table>
-  <img src="https://i.imgur.com/nxUFwS0.jpg"/>
-  </td>
-</tr>
-
-
-
-
-
-
-
-
-
-
-
-<!-- Start of the two column : START -->
-<td height="100%" valign="top" width="100%" style="background-color: #ebf2f9;">
-  <!--[if mso]>
+        <!-- Start of the two column : START -->
+        <tr><td height="100%" valign="top" width="100%" style="background-color: #d7e3df;">
+          <!--[if mso]>
   <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
   <tr>
   <td valign="top" width="660">
   <![endif]-->
-  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
-      <tbody><tr>
-          <td align="center" valign="top" style="font-size:0; padding: 30px 0;">
-              <!--[if mso]>
+          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+            <tbody>
+              <tr>
+                <td align="center" valign="top" style="font-size:0; padding: 30px 0 0px 0;">
+                  <!--[if mso]>
               <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
               <tr>
               <td valign="top" width="330">
               <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                      <tbody><tr>
-                          <td style="padding: 10px 10px;">
-                              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
-                                  <tbody>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 11, 18, 15</p>
-                                          <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/wednesday-walkers-blairstown-township-nj/delccb67f9f7fdaa39a5">Wednesday Walkers</a></b><br/>
-                                          <i style="font-size: 11px;">(Blairstown Township, NJ)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 1-31</p>
-                                          <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/quot-along-the-delaware-quot-art-exhibit-stroudsburg-pa/delec4aa526e0cec0972">Along the Delaware Art Exhibit</a></b><br/>
-                                          <i style="font-size: 11px;">(Stroudsburg, PA)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 3</p>
-                                          <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/shawnee-mountain-fireworks-display-east-stroudsburg-pa/del4576f066b0e0a04e0">Shawnee Mountain Fireworks Display</a></b><br/>
-                                          <i style="font-size: 11px;">(East Stroudsburg, PA)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 6</p>
-                                          <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/joanne-shenandoah-hancock-ny/del25e84b3ce17cf5ebf">Joanne Shenandoah</a></b><br/>
-                                          <i style="font-size: 11px;">(Hancock, NY)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 7, July 14, July 21, July 28, August 4, August 11, August 18</p>
-                                          <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/wildflower-music-festival-white-mills-pa/del200aae13b33c9b2e0">Wildflower Music Festival</a></b><br/>
-                                          <i style="font-size: 11px;">(White Mills, PA)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 14</p>
-                                          <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/second-saturday-honesdale-honesdale-pa/del17a3a760758773b03">Second Saturday - Honesdale</a></b><br/>
-                                          <i style="font-size: 11px;">(Honesdale, PA)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 14 & 15</p>
-                                          <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/oktoberfest-in-july-at-shawnee-mountain-east-stroudsburg-pa/delcccdae29229d1442b">Oktoberfest in July at Shawnee Mountain</a></b><br/>
-                                          <i style="font-size: 11px;">(East Stroudsburg, PA)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                      </tr>
-                  </tbody></table>
-              </div>
-              <!--[if mso]>
-              </td>
-              <td valign="top" width="330">
-              <![endif]-->
-              <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
+
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                       <tbody>
                         <tr>
                           <td style="padding: 10px 10px;">
-                              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
-                                  <tbody>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 20</p>
-                                          <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/dance-china-hancock-ny/delcd66cbadf771c2ff7">Dance China</a></b><br/>
-                                          <i style="font-size: 11px;">(Hancock, NY)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 21</p>
-                                          <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/kenoza-lake-fire-departments-annual-chicken-bbq-kenoza-lake-ny/del2209991d08ecf968a">Kenoza Lake Fire Dept. Annual Chicken Barbecue</a></b><br/>
-                                          <i style="font-size: 11px;">(Kenoza Lake, NY)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 28</p>
-                                          <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/en-plein-air-paint-out-delaware-water-gap-pa/del05ef763796cb81f50">Ein Plain Air Paint Out</a></b><br/>
-                                          <i style="font-size: 11px;">(Delaware Water Gap, PA)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">Aug. 3</p>
-                                          <b><a style="color:#231f20;font-family:Open Sans; font-weight:bold;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/dende-macedo-amp-ologunde-hancock-ny/del5b6cd152096d82121">Dende Macedo & Ologunde</a></b><br/>
-                                          <i style="font-size:11px;">(Hancock, NY)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
-                                        <div style="background:#000;padding:1em;background:#cbdbed;">
-                                          <p style="margin: 0;font-size:12px;color:#daaf69;text-transform:uppercase;font-weight:bold;">Aug 4-5</p>
-                                          <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/sweet-corn-amp-bbq-festival-at-shawnee-mountain-east-stroudsburg-pa/deldf54bc1ed6dbccaaf">Sweet Corn and BBQ Festival at Shawnee Mountain</a></b><br/>
-                                          <i style="font-size: 11px;">(East Stroudsburg, PA)</i>
-                                        <div>
-                                      </td>
-                                  </tr>
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                              <tbody>
+                                <tr>
+                                  <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px; line-height: 20px; color: #231f20; padding-top: 10px;" class="stack-column-center">
+                                    <p style="margin: 0;">
+                                      SAVE THE DATE – September 19, 2018 Scenic Wild Delaware River Workshop Preserving – Protecting-Promoting Our Natural, Historic and Cultural Assets At the Historic Blairstown Theater (Roy’s Hall) 30 Main St., Blairstown, NJ 07825
+                                      </p><div style="height:20px;"></div>
+                                      Panelists and Presentations in the areas of: Green Community Initiatives (examples include: Clean Energy Community Designation, Green Infrastructure, Trail and Open Space initiatives) Revitalization through Historic &amp; Cultural Preservation (examples include:
+                                      Establishing historic districts and arts districts, Public Art and Public Art spaces as a community marketing tool) Sustainable Agriculture (examples include Utilizing farmers markets to promote sustainable agriculture,
+                                      Farm to Table/Fork initiatives, Wineries, etc.)
+                                    <p></p>
+                                  </td>
+                                </tr>
                               </tbody>
                             </table>
                           </td>
-                      </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!--[if mso]>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso]>
+              </td>
+              <td valign="top" width="330">
+              <![endif]-->
+                  <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td style="padding: 10px 10px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <figure style="background: #fff;text-align: center;font-size: 11px;margin:0;">
+                                      <img src="https://i.imgur.com/cLH59g0.jpg" border="0" alt="alt_text" class="center-on-narrow" style="width: 100%; max-width: 400px; height: auto; background: #dddddd; font-family: sans-serif; line-height: 20px; color: #555555;">
+                                      <figcaption>Zip lining at Kittatinny Adventure Center in Milford, PA.</figcaption>
+                                    </figure>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px; line-height: 20px; color: #231f20; padding-top: 10px;" class="stack-column-center">
+                                    <p style="margin: 0;">
+                                      If you want to be a presenter or have suggestions for presenters, please contact SWDR staff, Sharon Davis, <a style="color: #231f20;" href="mailto:sdavis@npca.org">sdavis@npca.org</a> (<a style="color: #231f20;" href="tel:5704604468">570.460.4468</a>)
+                                      or Tatiana Orlov, <a style="color: #231f20;" href="mailto:sdavis@npca.org">torlov@npca.org</a> (<a style="color: #231f20;" href="tel:3476333590">347.633.3590</a>) Watch for the Eventbrite invitation in your mailbox
+                                      – coming soon.
+                                    </p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--[if mso]>
               </td>
               </tr>
               </table>
               <![endif]-->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tbody>
-                  <tr>
-                    <td valign="middle" style="padding-top:10px;padding-left:10px;padding-right:10px;">
-                      <div style="text-align: center; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;background:#f1e2c9;padding-left:40px;padding-right:40px;padding-top:1em;">
-                        <p style="color:#deb571;font-family: Open Sans;    text-transform: uppercase;font-weight: bold;font-variant: bold; font-size: 15px;text-transform:uppercase;">Recently updated content is more likely to be featured on the home page! Three easy ways to keep yours fresh:</p>
-                        <p style="margin: 0;color:#2e2929;font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px;"><span style="font-weight:bold;">Photos: </span>Upload new images. Use a seasonal photo as the first image, which represents your site, event or business in the galleries.</p>
-                          <p style="margin: 0;color:#2e2929;font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px;"><span style="font-weight:bold;">Dates: </span>Update event dates, business hours, and other information for 2018.</p>
-                          <p style="margin: 0;color:#2e2929;font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px;"><span style="font-weight:bold;">Special offers: </span>Add offers, packages and promotions to your listing.</p>
-                        <tr>
-                          <td style="padding: 0 10px 15px 10px;">
-                          <!-- Button : BEGIN -->
-                          <div style="background:#f1e2c9;padding:20px;">
-                          <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
-                            <tbody>
-                              <tr>
-                              <td class="button-td button-td-primary" style="border-radius: 4px; background: #dbae64;">
-                               <a class="button-a button-a-primary" href="http://edit.delawareriver.natgeotourism.com/8080/login.php" style="background: #dbae64; border: 1px solid #dbae64; font-family: Open Sans;font-style: bold;font-variant: normal; font-size: 12px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block;text-transform:uppercase;font-weight:bold;letter-spacing: 2px;">Update Your Pages Here</a>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          </div>
-                          <!-- Button : END -->
-                          </td>
-                        </tr>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-          </td>
-      </tr>
-  </tbody></table>
-  <!--[if mso]>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!--[if mso]>
   </td>
   </tr>
   </table>
   <![endif]-->
-</td>
+          <div style="text-align:center;">
+            <p style="font-family: Open Sans;font-style: bold;font-variant: bold; font-size: 15px;color:#377360;margin-top: 0;margin-bottom: 35px;">Visit Upper Delaware <a style="color:#377360;" href="https://BioBlitz.com">BioBlitz.com</a></p>
+          </div>
+        </td>
 
+        <!-- Barrior -->
+        </tr><tr style="background:#9abce3;">
+          <td>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td style="padding: 20px 20px 0 20px; font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px; line-height: 20px; color: #555555;">
 
+                    <h1 class="h-one-titles" style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #ffffff; font-weight: normal;">Upcoming Events</h1>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <img src="https://i.imgur.com/nxUFwS0.jpg">
+          </td>
+        </tr>
 
+        <!-- Start of the two column : START -->
+        <tr><td height="100%" valign="top" width="100%" style="background-color: #ebf2f9;">
+          <!--[if mso]>
+  <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+  <tr>
+  <td valign="top" width="660">
+  <![endif]-->
+          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+            <tbody>
+              <tr>
+                <td align="center" valign="top" style="font-size:0; padding: 30px 0;">
+                  <!--[if mso]>
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+              <tr>
+              <td valign="top" width="330">
+              <![endif]-->
+                  <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td style="padding: 10px 10px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                              <tbody>
+                                <tr>
+                                  <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                    <div style="background:#000;padding:1em;background:#cbdbed;">
+                                      <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 11, 18, 15</p>
+                                      <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/wednesday-walkers-blairstown-township-nj/delccb67f9f7fdaa39a5">Wednesday Walkers</a></b><br>
+                                      <i style="font-size: 11px;">(Blairstown Township, NJ)</i>
+                                      </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                    <div style="background:#000;padding:1em;background:#cbdbed;">
+                                      <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 1-31</p>
+                                      <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/quot-along-the-delaware-quot-art-exhibit-stroudsburg-pa/delec4aa526e0cec0972">Along the Delaware Art Exhibit</a></b><br>
+                                      <i style="font-size: 11px;">(Stroudsburg, PA)</i>
+                                      </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                    <div style="background:#000;padding:1em;background:#cbdbed;">
+                                      <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 3</p>
+                                      <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/shawnee-mountain-fireworks-display-east-stroudsburg-pa/del4576f066b0e0a04e0">Shawnee Mountain Fireworks Display</a></b><br>
+                                      <i style="font-size: 11px;">(East Stroudsburg, PA)</i>
+                                      </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                    <div style="background:#000;padding:1em;background:#cbdbed;">
+                                      <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 6</p>
+                                      <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/joanne-shenandoah-hancock-ny/del25e84b3ce17cf5ebf">Joanne Shenandoah</a></b><br>
+                                      <i style="font-size: 11px;">(Hancock, NY)</i>
+                                      </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                    <div style="background:#000;padding:1em;background:#cbdbed;">
+                                      <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 7, July 14, July 21, July 28, August 4, August 11, August 18</p>
+                                      <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/wildflower-music-festival-white-mills-pa/del200aae13b33c9b2e0">Wildflower Music Festival</a></b><br>
+                                      <i style="font-size: 11px;">(White Mills, PA)</i>
+                                      </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                    <div style="background:#000;padding:1em;background:#cbdbed;">
+                                      <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 14</p>
+                                      <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/second-saturday-honesdale-honesdale-pa/del17a3a760758773b03">Second Saturday - Honesdale</a></b><br>
+                                      <i style="font-size: 11px;">(Honesdale, PA)</i>
+                                      </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                    <div style="background:#000;padding:1em;background:#cbdbed;">
+                                      <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 14 &amp; 15</p>
+                                      <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/oktoberfest-in-july-at-shawnee-mountain-east-stroudsburg-pa/delcccdae29229d1442b">Oktoberfest in July at Shawnee Mountain</a></b><br>
+                                      <i style="font-size: 11px;">(East Stroudsburg, PA)</i>
+                                      </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                    <!--[if mso]>
+              </td>
+              <td valign="top" width="330">
+              <![endif]-->
+                    <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:50%; max-width:50%; vertical-align:top;" class="stack-column">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tbody>
+                          <tr>
+                            <td style="padding: 10px 10px;">
+                              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                <tbody>
+                                  <tr>
+                                    <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                      <div style="background:#000;padding:1em;background:#cbdbed;">
+                                        <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 20</p>
+                                        <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/dance-china-hancock-ny/delcd66cbadf771c2ff7">Dance China</a></b><br>
+                                        <i style="font-size: 11px;">(Hancock, NY)</i>
+                                        </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                      <div style="background:#000;padding:1em;background:#cbdbed;">
+                                        <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 21</p>
+                                        <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/kenoza-lake-fire-departments-annual-chicken-bbq-kenoza-lake-ny/del2209991d08ecf968a">Kenoza Lake Fire Dept. Annual Chicken Barbecue</a></b><br>
+                                        <i style="font-size: 11px;">(Kenoza Lake, NY)</i>
+                                        </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                      <div style="background:#000;padding:1em;background:#cbdbed;">
+                                        <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">July 28</p>
+                                        <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/en-plein-air-paint-out-delaware-water-gap-pa/del05ef763796cb81f50">Ein Plain Air Paint Out</a></b><br>
+                                        <i style="font-size: 11px;">(Delaware Water Gap, PA)</i>
+                                        </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                      <div style="background:#000;padding:1em;background:#cbdbed;">
+                                        <p style="margin: 0;color:#daaf69;text-transform:uppercase;font-weight:bold;font-size:12px;">Aug. 3</p>
+                                        <b><a style="color:#231f20;font-family:Open Sans; font-weight:bold;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/dende-macedo-amp-ologunde-hancock-ny/del5b6cd152096d82121">Dende Macedo &amp; Ologunde</a></b><br>
+                                        <i style="font-size:11px;">(Hancock, NY)</i>
+                                        </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 15px;padding-bottom:14px; line-height: 20px; color: #555555;" class="stack-column-center">
+                                      <div style="background:#000;padding:1em;background:#cbdbed;">
+                                        <p style="margin: 0;font-size:12px;color:#daaf69;text-transform:uppercase;font-weight:bold;">Aug 4-5</p>
+                                        <b><a style="color:#231f20;font-size:12px;" href="https://delawareriver.natgeotourism.com/content/sweet-corn-amp-bbq-festival-at-shawnee-mountain-east-stroudsburg-pa/deldf54bc1ed6dbccaaf">Sweet Corn and BBQ Festival at Shawnee Mountain</a></b><br>
+                                        <i style="font-size: 11px;">(East Stroudsburg, PA)</i>
+                                        </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                      <!--[if mso]>
+              </td>
+              </tr>
+              </table>
+              <![endif]-->
+                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tbody>
+                          <tr>
+                            <td valign="middle" style="padding-top:10px;padding-left:10px;padding-right:10px;">
+                              <div style="text-align: center; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;background:#f1e2c9;padding-left:40px;padding-right:40px;padding-top:1em;">
+                                <p style="color:#deb571;font-family: Open Sans;    text-transform: uppercase;font-weight: bold;font-variant: bold; font-size: 15px;text-transform:uppercase;">Recently updated content is more likely to be featured on the home page! Three easy ways to keep yours fresh:</p>
+                                <p style="margin: 0;color:#2e2929;font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px;"><span style="font-weight:bold;">Photos: </span>Upload new images. Use a seasonal photo as the first image, which represents your site, event or business in the galleries.</p>
+                                <p style="margin: 0;color:#2e2929;font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px;"><span style="font-weight:bold;">Dates: </span>Update event dates, business hours, and other information for 2018.</p>
+                                <p style="margin: 0;color:#2e2929;font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px;"><span style="font-weight:bold;">Special offers: </span>Add offers, packages and promotions to your listing.</p>
+                                </div></td></tr><tr>
+                                  <td style="padding: 0 10px 15px 10px;">
+                                    <!-- Button : BEGIN -->
+                                    <div style="background:#f1e2c9;padding:20px;">
+                                      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                        <tbody>
+                                          <tr>
+                                            <td class="button-td button-td-primary" style="border-radius: 4px; background: #dbae64;">
+                                              <a class="button-a button-a-primary" href="http://edit.delawareriver.natgeotourism.com/8080/login.php" style="background: #dbae64; border: 1px solid #dbae64; font-family: Open Sans;font-style: bold;font-variant: normal; font-size: 12px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block;text-transform:uppercase;font-weight:bold;letter-spacing: 2px;">Update Your Pages Here</a>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                    <!-- Button : END -->
+                                  </td>
+                                </tr>
+                              
+                            
+                          
+                        </tbody>
+                      </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!--[if mso]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
+        </td>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Full Bleed Background Section : BEGIN -->
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #3b7461;">
-    <tr>
-        <td valign="top">
-            <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+        <!-- Full Bleed Background Section : BEGIN -->
+        </tr></tbody></table><table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #3b7461;">
+          <tbody><tr>
+            <td valign="top">
+              <div style="max-width: 680px; margin: 0 auto;" class="email-container">
                 <!--[if mso]>
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" align="center">
                 <tr>
                 <td>
                 <![endif]-->
-                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                    <tr>
-                        <td style="padding: 20px; text-align: center; font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px; line-height: 20px; color: #ffffff;">
-                            <p style="margin: 0;">Copyright</p>
-                            <img src="https://i.imgur.com/npSdI3m.jpg"/>
-                        </td>
-                    </tr>
-                </table>
+                <table role="presentation" cellpadding="0" border="0" width="100%">
+                  <tbody><tr>
+                    <td style="padding: 20px; text-align: center; font-family: Open Sans;font-style: normal;font-variant: normal; font-size: 12px; line-height: 20px; color: #ffffff;">
+                      <p style="margin: 0;">Copyright © 2018 Scenic Wild Delaware River, All rights reserved.</p>
+                      <img src="https://i.imgur.com/npSdI3m.jpg">
+                    </td>
+                  </tr>
+                </tbody></table>
                 <!--[if mso]>
                 </td>
                 </tr>
                 </table>
                 <![endif]-->
-            </div>
-        </td>
+              </div>
+            </td>
 
-    </tr>
-</table>
-<!-- Full Bleed Background Section : END -->
-
-
-
-
-        </table>
+          </tr>
+        </tbody></table>
         <!-- Full Bleed Background Section : END -->
+      
+  </div></center>
 
-    <!--[if mso | IE]>
-    </td>
-    </tr>
-    </table>
-    <![endif]-->
-    </center>
-</body>
-</html>
+</body></html>
